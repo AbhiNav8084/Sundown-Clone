@@ -343,3 +343,16 @@ nav{
     font-size: 1vw;
     font-weight: 100;
 }
+#fixed-image{
+    height: 30vw;
+    width: 25vw;
+    background-color: aquamarine;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+}
