@@ -26,10 +26,11 @@ html,body{
 }
 
 #page1{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: #EFEAE3;
     position: relative;
+    padding: 0 2vw;
 }
 nav{
     padding: 2vw 2vw;
@@ -46,12 +47,16 @@ nav{
 }
 
 #nav-part2 h4{
-    padding:0.9vw 1.4vw;
+    padding:14px 24px;
     border: 1px solid #ababab;
     border-radius: 50px ;
-    font-weight: 500;
+    letter-spacing: -0.5px;
+    font-weight: 400;
     color: #000000bb;
-    font-size: 1vw;
+    transition:  ease-in 0.3s;
+    position: relative;
+    font-size: 15px;
+    overflow: hidden;
 }
 
 #nav-part2 h4::after{
@@ -60,4 +65,281 @@ nav{
     height: 100%;
     width: 100%;
     background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition:  ease-in 0.3s;
+}
+#nav-part2 h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+
+#nav-part2 h4 a{
+    color: #000000bb;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+}
+
+#nav-part2 h4:hover a{
+    color: white;
+}
+
+#center{
+    height: 75vh;
+    width:100% ;
+    /* background-color: orange; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #0000003c;
+    padding-bottom: 2.5vw;
+}
+#left h3{
+    width: 29vw;
+    font-size: 2.2vw;
+    line-height: 2vw;
+}
+
+#center h1{
+    font-size: 10.3vw;
+    text-align: right;
+    line-height: 8vw;
+    font-weight: 900;
+}
+
+#page1 video{
+    border-radius: 30px;
+    margin-top: 3vw;
+    width: 100%;
+    position: relative;
+}
+#hero-shape{
+    position: absolute;
+    width: 47vw;
+    height: 36vw;
+    right: 0;
+    top: 80vh;
+}
+
+#hero-1{
+    height: 100%;
+    width: 100%;
+    background-color: #FE320A;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter: blur(50px);
+    position: absolute;
+}
+#hero-2{
+    height: 30vw;
+    width: 30vw;
+    background: linear-gradient(#FE320A, #fe3f0a);
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(25px);
+    animation-name: anime2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#hero-3{
+    height: 30vw;
+    width: 30vw;
+    position: absolute;
+    background: linear-gradient(#FE320A, #fe3f0a);
+    border-radius: 50%;
+    filter: blur(25px);
+    animation-name: anime1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes anime1 {
+    from{
+        transform: translate(55%,-3%);
+    }
+    to{
+        transform: translate(10%,-10%);
+    }
+}
+@keyframes anime2 {
+    from{
+        transform: translate(5%,-5%);
+    }
+    to{
+        transform: translate(-20%,30%);
+    }
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    background-color:#EFEAE3;
+    padding: 8vw 0;
+    position: relative;
+}
+#moving-text{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+#moving-text::-webkit-scrollbar{
+    display: none;
+}
+.container{
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#moving-text h1{
+    font-size: 9vw;
+    display: inline-block;
+
+}
+#circle{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #FE320A;
+    display: inline-block;
+    margin: 1vw 2vw;
+}
+
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#page2-bottom{
+    height: 80vh;
+    width: 100%;
+    padding: 4.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index:9;
+}
+#page2-bottom h1{
+    font-size: 5vw;
+    width: 60%;
+    line-height: 4vw;
+}
+#bottom-part2{
+    width: 23%;
+}
+#bottom-part2 img{
+    width: 100%;
+    border-radius: 15px;
+}
+#bottom-part2 p{
+    font-weight: 200 ;
+    margin-top: 2vw;
+    font-size: 1vw;
+}
+#page2 #bubble{
+    height: 32vw;
+    width: 32vw;
+    position: absolute;
+    border-radius: 50%;
+    background:linear-gradient( to top right, #FE320A,#ff5c0b);
+    top: 56%;
+    left: 25%;
+    filter: blur(20px);
+    animation-name: bubble;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes bubble{
+    from{
+        filter: blur(20px);
+        transform: translate(10%,-10%) skew(0);
+    }
+    to{
+        filter: blur(30px);
+        transform: translate(-10%,10%) skew(-12deg);
+    }
+}
+
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 4vw 0;
+}
+.feature{
+    display: flex;
+    align-items: center;
+    height: 10vw;
+    width: 100%;
+    position: relative;
+}
+.dot{
+    width: 20px;
+    height: 20px;
+    background-color: #FE320A;
+    border-radius: 50%;
+    margin-left: 25px;
+    margin-right:5px ;
+}
+.elem{
+    height: 130px;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #38383864;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+}
+
+.elem h2{
+    font-size: 3vw;
+    font-weight: 200;
+    position: relative;
+    z-index: 9;
+}
+.elem .overlay{
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: all ease 0.25s;
+}
+.elem:hover .overlay{
+    top: 0;
+}
+.description{
+    position: relative;
+    padding-right: 20px;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9;
+}
+.description h3{
+    font-size: 1.5vw;
+    font-weight: 300;
+}
+.description p{
+    font-size: 1vw;
+    font-weight: 100;
 }
