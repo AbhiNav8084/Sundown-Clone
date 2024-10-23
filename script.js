@@ -30,21 +30,34 @@ function swiperAnimation(){
     });
 }
 
+
+function menuAnimation(){
+        var drop_down = document.querySelector("nav #menu")
+        var full = document.querySelector("#full-scr")
+        var nav_img = document.querySelector("nav img")
+        var flag =0
+        drop_down.addEventListener("click",function(){
+        if(flag == 0){
+            full.style.top = 0
+            nav_img.style.opacity = 0
+            flag = 1
+        }else{
+            full.style.top = "-100%"
+            nav_img.style.opacity = 1
+            flag = 0
+        }
+    })
+}
+function loaderAnimation() {
+    var loader = document.querySelector("#loader")
+    setTimeout(function () {
+        loader.style.top = "-100%"
+    }, 4200)
+}
+
 swiperAnimation()
 page3Animation()
+menuAnimation()
+loaderAnimation()
 
-var drop_down = document.querySelector("nav #menu")
-var full = document.querySelector("#full-scr")
-var nav_img = document.querySelector("nav img")
-var flag =0
-drop_down.addEventListener("click",function(){
-    if(flag == 0){
-        full.style.top = 0
-        nav_img.style.opacity = 0
-        flag = 1
-    }else{
-        full.style.top = "-100%"
-        nav_img.style.opacity = 1
-        flag = 0
-    }
-})
+

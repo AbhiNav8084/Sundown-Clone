@@ -774,7 +774,7 @@ nav #menu{
         display: none;
     }
 
-    .con {
+    .container{
         white-space: nowrap;
         display: inline-block;
         animation-name: move;
@@ -838,17 +838,111 @@ nav #menu{
         position: absolute;
         border-radius: 50%;
         background: linear-gradient(to top right, #ff2d03, #ff5c0b);
-        /* background: linear-gradient(to top right,red,blue); */
-
-
-        top: 58%;
-        left: 25%;
+        top: 36%;
+        left: 32%;
         filter: blur(20px);
-        animation-name: gooey;
-        animation-duration: 6s;
+        animation-name: bubble;
+        animation-duration: 4s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
         animation-timing-function: ease-in-out;
+
+    }
+}
+@media (max-width:980px){
+    .elem {
+        margin-top: 30px;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .elem::before {
+        display: none;
+    }
+
+    #elem-container {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+}
+
+@media (max-width:800px) {
+    .description h3{
+        font-size: 3vw;
+    }
+    .description p{
+        font-size: 1.8vw;
+    }
+}
+@media (max-width: 800px){
+    #page4 {
+        min-height: 70vh;
+    }
+}
+@media (max-width:650px){
+    #footer-top h3{
+        font-size: 5.5vw;
+        width: 30%;
+    }
+    #footer-top-right{
+        width: 35%;
+        font-size: 2.5vw;
+        word-spacing: 3px;
+    }
+}
+
+#loader{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: fixed;
+    z-index: 999;
+    top:0;
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loader h1{
+    font-size: 4vw;
+    color:transparent;
+    background: linear-gradient(to right, orange,orangered);
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+}
+
+#loader h1:nth-child(2){
+    animation-delay: 2s;
+}
+#loader h1:nth-child(3){
+    animation-delay: 3s;
+}
+
+@keyframes load {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@media (max-width:600px) {
+    #loader h1{
+        font-size: 10vw;
 
     }
 }
